@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-blue?style=for-the-badge&logo=kotlin"/>
+  <img src="https://img.shields.io/badge/Kotlin?style=for-the-badge&logo=kotlin"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/MVI-Architecture-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hilt-DI-success?style=for-the-badge"/>

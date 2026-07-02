@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-blue?style=for-the-badge&logo=kotlin"/>
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/MVI-Architecture-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hilt-DI-success?style=for-the-badge"/>
@@ -68,10 +68,10 @@ Presentation
 └── Effect
         │
         ▼
-Repository
+    Repository
         │
         ▼
-Retrofit API
+   Retrofit API
 ```
 
 ## MVI Flow
@@ -80,16 +80,16 @@ Retrofit API
 User Action
       │
       ▼
-Intent
+   Intent
       │
       ▼
-ViewModel
+  ViewModel
       │
       ▼
-Repository
+  Repository
       │
       ▼
-API
+     API
       │
       ▼
 NetworkResult
@@ -98,7 +98,7 @@ NetworkResult
 State / Effect
       │
       ▼
-Compose UI
+  Compose UI
 ```
 
 ---
@@ -110,6 +110,7 @@ app
 │
 ├── data
 │   ├── remote
+    │     ├── interceptors
 │   └── repository
 │
 ├── di
@@ -118,12 +119,14 @@ app
 │
 ├── presentation
 │   ├── login
-│   └── register
+│   ├── register
+│   └── home
 │
 ├── ui
-│   └── theme
+│   ├── theme
+│   └── components
 │
-├── MviAuthApp.kt
+├── BaseApp.kt
 └── MainActivity.kt
 ```
 
@@ -134,7 +137,7 @@ app
 ## Clone
 
 ```bash
-git clone https://github.com/its-hazratbilal/compose-mvi-auth-template.git
+git clone https://github.com/its-hazratbilal/compose-mvi-auth.git
 ```
 
 Open the project in Android Studio.

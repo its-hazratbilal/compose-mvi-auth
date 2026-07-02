@@ -6,10 +6,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Kotlin-181717?style=for-the-badge&logo=kotlin&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Kotlin-white?style=for-the-badge&logo=kotlin&logoColor=7F52FF"/>
-  <img src="https://img.shields.io/badge/Kotlin-27282C?style=for-the-badge&logo=kotlin&logoColor=7F52FF"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/MVI-Architecture-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hilt-DI-success?style=for-the-badge"/>

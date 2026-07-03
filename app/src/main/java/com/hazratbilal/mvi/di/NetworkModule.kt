@@ -2,7 +2,7 @@ package com.hazratbilal.mvi.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.hazratbilal.mvi.data.remote.AuthApi
+import com.hazratbilal.mvi.data.remote.api.AuthApi
 import com.hazratbilal.mvi.data.remote.interceptors.ApiKeyInterceptor
 import dagger.Module
 import dagger.Provides

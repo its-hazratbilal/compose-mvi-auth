@@ -2,8 +2,8 @@ package com.hazratbilal.mvi.presentation.register
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hazratbilal.mvi.data.remote.NetworkResult
-import com.hazratbilal.mvi.data.remote.RegisterRequest
+import com.hazratbilal.mvi.data.remote.dto.RegisterRequest
+import com.hazratbilal.mvi.utils.Result
 import com.hazratbilal.mvi.data.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -90,11 +90,11 @@ class RegisterViewModel @Inject constructor(
                 )
             ) {
 
-                is NetworkResult.Success -> {
+                is Result.Success -> {
                     sendEffect(RegisterContract.Effect.NavigateHome)
                 }
 
-                is NetworkResult.Error -> {
+                is Result.Error -> {
                     sendEffect(RegisterContract.Effect.ShowError(result.message))
                 }
             }

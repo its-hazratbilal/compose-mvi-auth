@@ -1,11 +1,11 @@
 package com.hazratbilal.mvi.data.repository
 
-import com.hazratbilal.mvi.data.remote.AuthApi
-import com.hazratbilal.mvi.data.remote.LoginRequest
-import com.hazratbilal.mvi.data.remote.LoginResponse
-import com.hazratbilal.mvi.data.remote.NetworkResult
-import com.hazratbilal.mvi.data.remote.RegisterRequest
-import com.hazratbilal.mvi.data.remote.RegisterResponse
+import com.hazratbilal.mvi.data.remote.api.AuthApi
+import com.hazratbilal.mvi.data.remote.dto.LoginRequest
+import com.hazratbilal.mvi.data.remote.dto.LoginResponse
+import com.hazratbilal.mvi.data.remote.dto.RegisterRequest
+import com.hazratbilal.mvi.data.remote.dto.RegisterResponse
+import com.hazratbilal.mvi.utils.Result
 import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(
@@ -14,36 +14,36 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun login(
         request: LoginRequest
-    ): NetworkResult<LoginResponse> {
+    ): Result<LoginResponse> {
 
         return try {
             val response = api.login(request)
 
             if (response.isSuccessful && response.body() != null) {
-                NetworkResult.Success(response.body()!!)
+                Result.Success(response.body()!!)
             } else {
-                NetworkResult.Error(response.message())
+                Result.Error(response.message())
             }
         } catch (e: Exception) {
-            NetworkResult.Error(e.message ?: "Unknown error")
+            Result.Error(e.message ?: "Unknown error")
         }
     }
 
     override suspend fun register(
         request: RegisterRequest
-    ): NetworkResult<RegisterResponse> {
+    ): Result<RegisterResponse> {
 
         return try {
             val response = api.register(request)
 
             if (response.isSuccessful && response.body() != null) {
-                NetworkResult.Success(response.body()!!)
+                Result.Success(response.body()!!)
             } else {
-                NetworkResult.Error(response.message())
+                Result.Error(response.message())
             }
 
         } catch (e: Exception) {
-            NetworkResult.Error(e.message ?: "Unknown error")
+            Result.Error(e.message ?: "Unknown error")
         }
     }
 }

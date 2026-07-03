@@ -110,7 +110,9 @@ app
 │
 ├── data
 │   ├── remote
-│   │     ├── interceptors
+│   │     ├── api
+│   │     ├── dto
+│   │     └── interceptors
 │   └── repository
 │
 ├── di
@@ -125,6 +127,8 @@ app
 ├── ui
 │   ├── theme
 │   └── components
+│
+├── utils
 │
 ├── BaseApp.kt
 └── MainActivity.kt

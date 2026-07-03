@@ -2,6 +2,7 @@ package com.hazratbilal.mvi.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.hazratbilal.mvi.BuildConfig
 import com.hazratbilal.mvi.data.remote.api.AuthApi
 import com.hazratbilal.mvi.data.remote.interceptors.ApiKeyInterceptor
 import dagger.Module
@@ -14,7 +15,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import com.hazratbilal.mvi.BuildConfig
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -28,7 +28,11 @@ object NetworkModule {
     @Singleton
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
+            level = if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor.Level.BODY
+            } else {
+                HttpLoggingInterceptor.Level.NONE
+            }
         }
     }
 
@@ -53,9 +57,7 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(
-                GsonConverterFactory.create(gson)
-            )
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 
@@ -64,6 +66,4 @@ object NetworkModule {
     fun provideAuthApi(retrofit: Retrofit): AuthApi {
         return retrofit.create(AuthApi::class.java)
     }
-
-
 }

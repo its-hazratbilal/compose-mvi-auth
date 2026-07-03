@@ -29,21 +29,15 @@ class RegisterViewModel @Inject constructor(
     fun onIntent(intent: RegisterContract.Intent) {
         when (intent) {
             is RegisterContract.Intent.NameChanged -> {
-                updateState {
-                    copy(name = intent.name)
-                }
+                updateState { copy(name = intent.name) }
             }
 
             is RegisterContract.Intent.EmailChanged -> {
-                updateState {
-                    copy(email = intent.email)
-                }
+                updateState { copy(email = intent.email) }
             }
 
             is RegisterContract.Intent.PasswordChanged -> {
-                updateState {
-                    copy(password = intent.password)
-                }
+                updateState { copy(password = intent.password) }
             }
 
             RegisterContract.Intent.RegisterClicked -> {
@@ -57,7 +51,6 @@ class RegisterViewModel @Inject constructor(
     }
 
     private fun register() {
-
         val currentState = _state.value
 
         if (currentState.name.isBlank()) {
@@ -76,20 +69,17 @@ class RegisterViewModel @Inject constructor(
         }
 
         viewModelScope.launch {
-
-            updateState {
-                copy(isLoading = true)
-            }
+            updateState { copy(isLoading = true) }
 
             when (
                 val result = repository.register(
                     RegisterRequest(
+                        name = currentState.name,
                         email = currentState.email,
                         password = currentState.password
                     )
                 )
             ) {
-
                 is Result.Success -> {
                     sendEffect(RegisterContract.Effect.NavigateHome)
                 }
@@ -99,9 +89,7 @@ class RegisterViewModel @Inject constructor(
                 }
             }
 
-            updateState {
-                copy(isLoading = false)
-            }
+            updateState { copy(isLoading = false) }
         }
     }
 

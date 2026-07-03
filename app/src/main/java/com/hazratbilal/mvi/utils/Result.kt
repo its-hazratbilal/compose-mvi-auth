@@ -7,7 +7,8 @@ sealed interface Result<out T> {
     ) : Result<T>
 
     data class Error(
-        val message: String
+        val message: String,
+        val cause: Throwable? = null
     ) : Result<Nothing>
 
 }

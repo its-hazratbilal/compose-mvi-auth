@@ -1,6 +1,6 @@
 package com.hazratbilal.mvi.presentation.register
 
-interface RegisterContract {
+object RegisterContract {
 
     data class State(
         val name: String = "",

@@ -27,18 +27,13 @@ class LoginViewModel @Inject constructor(
     val effect: SharedFlow<LoginContract.Effect> = _effect.asSharedFlow()
 
     fun onIntent(intent: LoginContract.Intent) {
-
         when (intent) {
             is LoginContract.Intent.EmailChanged -> {
-                updateState {
-                    copy(email = intent.email)
-                }
+                updateState { copy(email = intent.email) }
             }
 
             is LoginContract.Intent.PasswordChanged -> {
-                updateState {
-                    copy(password = intent.password)
-                }
+                updateState { copy(password = intent.password) }
             }
 
             LoginContract.Intent.LoginClicked -> {
@@ -65,12 +60,7 @@ class LoginViewModel @Inject constructor(
         }
 
         viewModelScope.launch {
-            updateState {
-                copy(
-                    isLoading = true,
-                    error = null
-                )
-            }
+            updateState { copy(isLoading = true, error = null) }
 
             when (
                 val result = repository.login(
@@ -89,9 +79,7 @@ class LoginViewModel @Inject constructor(
                 }
             }
 
-            updateState {
-                copy(isLoading = false)
-            }
+            updateState { copy(isLoading = false) }
         }
     }
 

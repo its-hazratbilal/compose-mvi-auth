@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.hazratbilal.mvi.navigation.AuthNavGraph
+import com.hazratbilal.mvi.ui.navigation.AuthNavGraph
 import com.hazratbilal.mvi.ui.theme.MVITheme
 import dagger.hilt.android.AndroidEntryPoint
 

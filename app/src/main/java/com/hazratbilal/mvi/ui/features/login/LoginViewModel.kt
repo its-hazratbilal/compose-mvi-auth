@@ -1,4 +1,4 @@
-package com.hazratbilal.mvi.presentation.login
+package com.hazratbilal.mvi.ui.features.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

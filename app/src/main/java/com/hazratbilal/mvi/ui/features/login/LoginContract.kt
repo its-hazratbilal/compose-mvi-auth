@@ -1,19 +1,18 @@
-package com.hazratbilal.mvi.presentation.register
+package com.hazratbilal.mvi.ui.features.login
 
-object RegisterContract {
+object LoginContract {
 
     data class State(
-        val name: String = "",
         val email: String = "",
         val password: String = "",
-        val isLoading: Boolean = false
+        val isLoading: Boolean = false,
+        val error: String? = null
     )
 
     sealed interface Intent {
-        data class NameChanged(val name: String) : Intent
         data class EmailChanged(val email: String) : Intent
         data class PasswordChanged(val password: String) : Intent
-        data object RegisterClicked : Intent
+        data object LoginClicked : Intent
     }
 
     sealed interface Effect {

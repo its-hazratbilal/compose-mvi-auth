@@ -1,4 +1,4 @@
-package com.hazratbilal.mvi.presentation.register
+package com.hazratbilal.mvi.ui.features.register
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

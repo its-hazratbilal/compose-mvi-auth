@@ -1,4 +1,4 @@
-package com.hazratbilal.mvi.presentation.login
+package com.hazratbilal.mvi.ui.features.login
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

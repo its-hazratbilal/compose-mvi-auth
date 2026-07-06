@@ -1,4 +1,4 @@
-package com.hazratbilal.mvi.presentation.register
+package com.hazratbilal.mvi.ui.features.register
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

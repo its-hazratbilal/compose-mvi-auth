@@ -1,4 +1,4 @@
-package com.hazratbilal.mvi.navigation
+package com.hazratbilal.mvi.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -6,9 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.hazratbilal.mvi.presentation.home.HomeScreen
-import com.hazratbilal.mvi.presentation.login.LoginScreen
-import com.hazratbilal.mvi.presentation.register.RegisterScreen
+import com.hazratbilal.mvi.ui.features.home.HomeScreen
+import com.hazratbilal.mvi.ui.features.login.LoginScreen
+import com.hazratbilal.mvi.ui.features.register.RegisterScreen
 
 private object Routes {
     const val LOGIN = "login"

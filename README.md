@@ -117,16 +117,14 @@ app
 │
 ├── di
 │
-├── navigation
-│
-├── presentation
-│   ├── login
-│   ├── register
-│   └── home
-│
 ├── ui
-│   ├── theme
-│   └── components
+│   ├── common
+│   ├── features
+│   │     ├── login
+│   │     ├── register
+│   │     └── home
+│   ├── navigation
+│   └── theme
 │
 ├── utils
 │

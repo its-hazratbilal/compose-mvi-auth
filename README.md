@@ -77,7 +77,7 @@ Presentation
 ## MVI Flow
 
 ```
-User Action
+ User Action
       │
       ▼
    Intent
